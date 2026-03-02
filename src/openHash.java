@@ -9,6 +9,11 @@ public class openHash {
         this.keys = new String[m];
         this.values = new String[m];
     }
+    public int hashfunction(String key) {
+        int h = key.hashCode();
+        return Math.abs(h) % m + 1;
+    }
+
 }
 
 
