@@ -2,9 +2,10 @@ import java.lang.Math; import java.io.FileReader;
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.text.DecimalFormat;
-import java.util.Collection;
+import java.util.Random;
 
 public class HashingPrac {
+    public static final int N = 1 << 20;
 
    public static class key_value {
        String key;
@@ -15,10 +16,20 @@ public class HashingPrac {
            this.value = value;
        }
    }
+    private static void shuffle(String[] array) {
+        Random ranIndex = new Random();
+        for (int i = array.length - 1; i > 0; i--) {
+            int index = ranIndex.nextInt(i + 1);
+            String temp = array[index];
+            array[index] = array[i];
+            array[i] = temp;
+        }
+    }
 
 
     public static void main(String[] args){
-        int n = (int)(Math.pow(2, 20));
+
+
 
 
 
@@ -59,8 +70,8 @@ public class HashingPrac {
         System.out.println("Average time =           " + fiveD.format(aveRuntime/1000)
                 + "s. " + '\u00B1' + " " + fourD.format(stdDeviation) + "ms.");
         System.out.println("Standard deviation =     " + fourD.format(stdDeviation));
-        System.out.println("n            =           " + n );
-        System.out.println("Average time / run =     " + fiveD.format(aveRuntime/n*1000)
+        System.out.println("n            =           " + N );
+        System.out.println("Average time / run =     " + fiveD.format(aveRuntime/N*1000)
                 + '\u00B5' + "s. ");
 
         System.out.println("Repetitions  =             " + repetitions);
