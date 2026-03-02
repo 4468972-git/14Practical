@@ -1,8 +1,30 @@
-import java.lang.Math; import java.io.FileReader; import java.util.Scanner; import java.text.DecimalFormat;
+import java.lang.Math; import java.io.FileReader;
+import java.util.LinkedList;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+import java.util.Collection;
 
 public class HashingPrac {
 
+   public static class key_value {
+       String key;
+       String value;
+
+       public key_value(String key, String value) {
+           this.key = key;
+           this.value = value;
+       }
+   }
+
+
     public static void main(String[] args){
+        int n = (int)(Math.pow(2, 20));
+
+
+
+
+
+
 
         DecimalFormat twoD = new DecimalFormat("0.00");
         DecimalFormat fourD = new DecimalFormat("0.0000");
@@ -18,10 +40,6 @@ public class HashingPrac {
             start = System.currentTimeMillis();
 
             // call the procedures to time here:
-            for (int i = 0; i < 30; i++)
-
-
-            for (int i = 0; i < 30; i++)
 
 
             finish = System.currentTimeMillis();
@@ -41,7 +59,7 @@ public class HashingPrac {
         System.out.println("Average time =           " + fiveD.format(aveRuntime/1000)
                 + "s. " + '\u00B1' + " " + fourD.format(stdDeviation) + "ms.");
         System.out.println("Standard deviation =     " + fourD.format(stdDeviation));
-        System.out.println("n            =           " + n);
+        System.out.println("n            =           " + n );
         System.out.println("Average time / run =     " + fiveD.format(aveRuntime/n*1000)
                 + '\u00B5' + "s. ");
 
