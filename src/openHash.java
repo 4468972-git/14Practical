@@ -13,6 +13,22 @@ public class openHash {
         int h = key.hashCode();
         return Math.abs(h) % m + 1;
     }
+    public void insert(String key, String value) {
+        int i = hashfunction(key);
+
+        while (keys[i] != null) {
+            if (keys[i].equals(key)) {
+                values[i] = value;
+                return;
+            }
+            i = (i) % m + 1;
+        }
+        keys[i] = key;
+        values[i] = value;
+    }
+    public String lookup(String key){
+
+    }
 
 }
 
