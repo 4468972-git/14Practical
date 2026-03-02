@@ -28,12 +28,17 @@ public class HashingPrac {
 
 
     public static void main(String[] args){
+        String[] keys = new String[N];
+        for (int i = 0; i < N; i++) {
+            keys[i] = "Key" + i;
+        }
 
-
-
-
-
-
+        shuffle(keys);
+        key_value[] data = new key_value[N];
+        for (int i = 0; i < N; i++) {
+            String dataValue = String.valueOf(i + 1);
+            data[i] = new key_value(keys[i], dataValue);
+        }
 
 
 
